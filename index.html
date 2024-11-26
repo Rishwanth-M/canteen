@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>FoodHub</h1>
+        </div>
+        <div class="header-right">
+            <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4NjA3MDM4LWltYWdlLWt3eXAzdTZ0LmpwZw.jpg" alt="User" class="user-icon" id="user-icon">
+            <div class="dropdown" id="logout-dropdown" style="display: none;">
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Container Options -->
+    <section class="container-options">
+        <button onclick="showItems('main-canteen')">Main Canteen</button>
+        <button onclick="showItems('juice')">Juice</button>
+        <button onclick="showItems('chaat')">Chaat</button>
+    </section>
+
+    <!-- Food Items Display -->
+    <section id="food-items" class="food-items">
+        <!-- Items will be dynamically populated here -->
+    </section>
+
+    <!-- Add to Cart Button -->
+    <section class="add-to-cart-section">
+        <button id="add-to-cart-btn" onclick="addSelectedItemsToCart()">Add to Cart</button>
+    </section>
+
+    <!-- Cart Popup -->
+    <div id="cart-popup" class="cart-popup" style="display: none;">
+        <div class="cart-content">
+            <span class="close-btn" onclick="closeCartPopup()">×</span>
+            <div class="cart-items" id="cart-items">
+                <!-- Dynamic Cart Items -->
+            </div>
+            <div class="cart-summary">
+                <table>
+                    <tr>
+                        <td>Handling Charges</td>
+                        <td id="handling-charges">10/-</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td id="subtotal">0/-</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td id="total">0/-</td>
+                    </tr>
+                </table>
+                <button onclick="payNow()">Pay Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
